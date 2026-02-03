@@ -18,6 +18,7 @@ namespace Application.Usecase.Products.Handlers
 
         public async Task<ProductResponseDto> Handle(GetProductQuery request, CancellationToken cancellationToken)
         {
+            Console.WriteLine("Jellle");
             var product = await _repository.GetByIdAsync(request.Id);
             if (product == null)
                 return null;
@@ -32,6 +33,7 @@ namespace Application.Usecase.Products.Handlers
                 ImageUrl = product.ImageUrl,
                 IsActive = product.IsActive
             };
+            
         }
 
     }
